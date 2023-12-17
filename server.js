@@ -3,14 +3,11 @@ const cors = require("cors");
 const db = require("./app/models");
 const routes = require("./app/routes")
 const app = express();
-const dotenv = require('dotenv'); // Add this line
+const dotenv = require('dotenv').config();  // Add this line
 
 var corsOptions = {
     origin: "http://localhost:8081"
 };
-
-//  ENV
-dotenv.config();
 
 app.use(cors(corsOptions));
 
