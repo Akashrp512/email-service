@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
     requireTLS: true,
     debug: true,
     auth: {
-        user: "avi@digielevation.com", // Replace with your Gmail email address
+        user: "sales@digielevation.com", // Replace with your Gmail email address
         pass: "Qwerty=@123", // Replace with your Gmail email password
     },
 });
@@ -37,76 +37,143 @@ const sendThankYouEmail = async (toEmail) => {
         subject: 'Thank You for Contacting Us',
         html: `
         <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        p {
-            color: #666;
-            text-align: center;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px 40px;
-        }
-    </style>
-    <title>Thank You for Contacting Digielevation!</title>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Thank You for Contacting Digielevation!</h1>
-        <p>We appreciate your interest and will get back to you as soon as possible.</p>
-        <p>Best regards,<br>Digielevation Team</p>
-        <a href="https://digielevation.com" class="button">Visit Digielevation</a>
-    </div>
-</body>
-
-</html>`,
+        <html lang="en">
+        
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            body {
+              margin: 0;
+              font-family: 'Helvetica Neue', Arial, sans-serif;
+            }
+        
+            header {
+              padding: 1rem;
+              color: #fff;
+              background-color: #2ecc71;
+              /* Green color for the digital marketing agency */
+            }
+        
+            main {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 3rem 1rem;
+            }
+        
+            .rounded-full {
+              border-radius: 9999px;
+            }
+        
+            .bg-muted {
+              background-color: #d3d3d3;
+            }
+        
+            .border {
+              border: 1px solid #000;
+            }
+        
+            footer {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 1rem;
+              background-color: #f5f5f5;
+            }
+        
+            .text-xs {
+              font-size: 0.75rem;
+            }
+        
+            .text-gray-500 {
+              color: #888;
+            }
+        
+            .hover\:underline:hover {
+              text-decoration: underline;
+            }
+        
+            .focus-visible\:ring-ring:focus-visible {
+              outline: 2px auto #2ecc71;
+              /* Green color for the focus ring */
+            }
+        
+            .focus-visible\:ring-offset-2:focus-visible {
+              outline-offset: 2px;
+            }
+        
+            .disabled\:pointer-events-none {
+              pointer-events: none;
+            }
+        
+            .disabled\:opacity-50 {
+              opacity: 0.5;
+            }
+          </style>
+        </head>
+        
+        <body>
+        
+          <header>
+            <h1 class="text-2xl font-bold">Thank You for Choosing Our Digital Marketing Services!</h1>
+          </header>
+        
+          <main>
+            <span class="relative flex shrink-0 overflow-hidden rounded-full h-24 w-24 mb-4">
+              <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+                <img src="https://digielevation.com/assets/images/favicon32x32.png"  >
+              </span>
+              <!-- Replace "DM" with your digital marketing agency logo or initials -->
+            </span>
+            <h2 class="text-xl font-semibold mb-2">Dear Valued Client,</h2>
+            <p class="text-md text-gray-800 mb-6">
+              We want to express our gratitude for choosing our digital marketing services. Your trust means the world to us.
+            </p>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm mb-6 max-w-md mx-auto">
+              <div class="flex flex-col space-y-1.5 p-6 px-4 py-2">
+                <h3 class="text-lg font-semibold">About Our Digital Marketing Solutions</h3>
+              </div>
+              <div class="p-6 px-4 py-2">
+                <p class="text-sm text-gray-600 mb-2">
+                  Our dedicated team is committed to helping your business thrive in the digital landscape. We look forward to
+                  delivering exceptional results and growing your online presence.
+                </p>
+                <img src="https://digielevation.com/assets/images/digielevation-logo.png" width="100%" height="100%"
+                  alt="Digital Marketing Image"
+                  class="aspect-[1/1] overflow-hidden rounded-lg object-contain object-center mb-2">
+                <button
+                  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 px-4 py-2">Learn
+                  more</button>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mb-6">
+              We are excited to embark on this journey with you and contribute to your digital success.
+            </p>
+            <button
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">Explore
+              Our Services</button>
+          </main>
+        
+          <footer>
+            <p class="text-sm text-gray-500">© 2023 Digielevation. All rights reserved.</p>
+          </footer>
+        
+        </body>
+        
+        </html>`,
     };
 
     await transporter.sendMail(mailOptions);
 };
 
-const sendOwnerNotificationEmail = async (toEmail, formData) => {
+const sendOwnerNotificationEmail = async (toEmails, formData) => {
     const { name, email, phoneNumber, message } = formData;
 
     const mailOptions = {
         from: process.env.GODADDY_EMAIL,
-        to: toEmail,
+        to: toEmails.join(', '),
         subject: 'New Contact Form Submission',
         html: `
             <body>

@@ -1,14 +1,14 @@
-// controllers/ContactFormController/index.js
-const db = require("../../models");
-const emailService = require("../../service/emailService")
+const db = require("../models");
+const emailService = require("../service/emailService")
 
 const sendEmailsInBackground = async (toEmail, formData) => {
     try {
         // Send a thank-you email to the user
-        await emailService.sendThankYouEmail(toEmail);
+        // await emailService.sendThankYouEmail(toEmail);
 
         // Send notification email to the owner
-        await emailService.sendOwnerNotificationEmail('avinashrp2@gmail.com', formData);
+        await emailService.sendOwnerNotificationEmail([ 'akashrp512@gmail.com','avinashrp2@gmail.com'], formData);
+        // 'avi@digielevation.com', 'avinashrp2@gmail.com'
     } catch (error) {
         console.error('Error sending emails:', error);
         // Handle any error in the background email sending process
@@ -19,7 +19,7 @@ const submitContactForm = async (req, res) => {
     try {
         const { name, email, phoneNumber, message } = req.body;
         // Store form data in the database
-        const contactForm = await db.ContactForm.create({
+        await db.ContactForm.create({
             name,
             email,
             phoneNumber,

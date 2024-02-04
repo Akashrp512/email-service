@@ -1,4 +1,4 @@
-const ContactFormController = require("./contactFormControllers")
+const ContactFormController = require("./contactFormController")
 
 module.exports = {
     ContactFormController,

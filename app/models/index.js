@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.ContactForm = require("./ContactForm/index.js")(sequelize, Sequelize);
+db.ContactForm = require("./contactFormModel.js")(sequelize, Sequelize);
 
 module.exports = db
