@@ -1,7 +1,7 @@
 {
-  "name": "digielevation-email-service",
+  "name": "xyz-email-service",
   "version": "1.0.0",
-  "description": "Digielevation Email service with nodemailer godaddy and sequelize",
+  "description": "XYZ Email service with nodemailer godaddy and sequelize",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

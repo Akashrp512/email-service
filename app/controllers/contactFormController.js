@@ -7,8 +7,7 @@ const sendEmailsInBackground = async (toEmail, formData) => {
         // await emailService.sendThankYouEmail(toEmail);
 
         // Send notification email to the owner
-        await emailService.sendOwnerNotificationEmail([ 'akashrp512@gmail.com','avinashrp2@gmail.com'], formData);
-        // 'avi@digielevation.com', 'avinashrp2@gmail.com'
+        await emailService.sendOwnerNotificationEmail([ process.env.OWNER_EMAIL_1,process.env.OWNER_EMAIL_2], formData);
     } catch (error) {
         console.error('Error sending emails:', error);
         // Handle any error in the background email sending process

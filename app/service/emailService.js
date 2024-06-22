@@ -13,8 +13,8 @@ const transporter = nodemailer.createTransport({
     requireTLS: true,
     debug: true,
     auth: {
-        user: "sales@digielevation.com", // Replace with your Gmail email address
-        pass: "Qwerty=@123", // Replace with your Gmail email password
+        user: process.env.AUTH_EMAIL, // Replace with your Email email address
+        pass: process.env.AUTH_PASSWORD, // Replace with your Email email password
     },
 });
 
@@ -186,7 +186,7 @@ const sendOwnerNotificationEmail = async (toEmails, formData) => {
                     <li><strong>Message:</strong> ${message}</li>
                 </ul>
                 <p>Best regards,</p>
-                <p>Digielevation</p>
+                <p>XYZ</p>
             </body>
         </ >
     `,
